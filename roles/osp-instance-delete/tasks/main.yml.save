@@ -1,0 +1,10 @@
+---
+# tasks file for roles/osp-instance-delete
+  - name: Fetch Instance Info
+    os_server_facts:
+      cloud: ospcloud
+      server: *
+  - name: Delete instances
+    os_server:
+      name: abcdef01-2345-6789-0abc-def0123456789
+      state: absent   
